@@ -65,7 +65,7 @@ const adminLoginSuccess = (payload) =>{
 
 const adminLoginFailure = () =>{
     return{
-        typep:types.ADMIN_LOGIN_FAILURE
+        type:types.ADMIN_LOGIN_FAILURE
     }
 }
 const registerInitiate = (email,password) =>{
