@@ -11,29 +11,29 @@ import { useDispatch, useSelector } from "react-redux";
 import { logoutInitiate } from "../../Redux/AuthReducer/action";
 
 export default function Navbar() {
-  const defaultStyle={
+  const defaultStyle = {
     fontSize: "15px",
-    padding:"5px"
-  }
-  const activeStyle={
+    padding: "5px",
+  };
+  const activeStyle = {
     fontSize: "15px",
-    padding:"5px",
-    fontWeight:"bold",
-    borderBottom: "2px solid red"
-  }
-  const adminStyle={
-    fontSize:"15px",
-    fontWeight:"bold",
-    padding:"5px",
-    color:"red",
-  }
-  const adminActiveStyle={
-    fontSize:"15px",
-    fontWeight:"bold",
-    color:"red",
-    padding:"5px",
-    borderBottom: "2px solid red"
-  }
+    padding: "5px",
+    fontWeight: "bold",
+    borderBottom: "2px solid red",
+  };
+  const adminStyle = {
+    fontSize: "15px",
+    fontWeight: "bold",
+    padding: "5px",
+    color: "red",
+  };
+  const adminActiveStyle = {
+    fontSize: "15px",
+    fontWeight: "bold",
+    color: "red",
+    padding: "5px",
+    borderBottom: "2px solid red",
+  };
   const [query, setQuery] = React.useState("");
   const [data, setData] = React.useState([]);
   const { isAdmin, isAuth } = useSelector((state) => state);
@@ -146,17 +146,69 @@ export default function Navbar() {
           <div></div>
         </div>
         <div className="section-div">
-          <NavLink style={({isActive})=>isActive?activeStyle:defaultStyle} to="/mugs" >Mugs</NavLink>
-          <NavLink style={({isActive})=>isActive?activeStyle:defaultStyle} to="/cutters">Cutters</NavLink>
-          <NavLink style={({isActive})=>isActive?activeStyle:defaultStyle} to="/fryers">Fryers</NavLink>
-          <NavLink style={({isActive})=>isActive?activeStyle:defaultStyle} to="/mixers">Mixers</NavLink>
-          <NavLink style={({isActive})=>isActive?activeStyle:defaultStyle} to="/lamps">Lamps</NavLink>
-          <NavLink style={({isActive})=>isActive?activeStyle:defaultStyle} to="/towers">Towers</NavLink>
-          <NavLink style={({isActive})=>isActive?activeStyle:defaultStyle} to="/blankets">Blankets</NavLink>
-          <NavLink style={({isActive})=>isActive?activeStyle:defaultStyle} to="/trees">Trees</NavLink>
-          <NavLink style={({isActive})=>isActive?activeStyle:defaultStyle} to="/garlands">Garlands</NavLink>
-          {isAdmin ? (            
-              <NavLink style={({isActive})=>isActive?adminActiveStyle:adminStyle} to="/admin">Admin</NavLink>           
+          <NavLink
+            style={({ isActive }) => (isActive ? activeStyle : defaultStyle)}
+            to="/mugs"
+          >
+            Mugs
+          </NavLink>
+          <NavLink
+            style={({ isActive }) => (isActive ? activeStyle : defaultStyle)}
+            to="/cutters"
+          >
+            Cutters
+          </NavLink>
+          <NavLink
+            style={({ isActive }) => (isActive ? activeStyle : defaultStyle)}
+            to="/fryers"
+          >
+            Fryers
+          </NavLink>
+          <NavLink
+            style={({ isActive }) => (isActive ? activeStyle : defaultStyle)}
+            to="/mixers"
+          >
+            Mixers
+          </NavLink>
+          <NavLink
+            style={({ isActive }) => (isActive ? activeStyle : defaultStyle)}
+            to="/lamps"
+          >
+            Lamps
+          </NavLink>
+          <NavLink
+            style={({ isActive }) => (isActive ? activeStyle : defaultStyle)}
+            to="/towels"
+          >
+            Towels
+          </NavLink>
+          <NavLink
+            style={({ isActive }) => (isActive ? activeStyle : defaultStyle)}
+            to="/blankets"
+          >
+            Blankets
+          </NavLink>
+          <NavLink
+            style={({ isActive }) => (isActive ? activeStyle : defaultStyle)}
+            to="/trees"
+          >
+            Trees
+          </NavLink>
+          <NavLink
+            style={({ isActive }) => (isActive ? activeStyle : defaultStyle)}
+            to="/garlands"
+          >
+            Garlands
+          </NavLink>
+          {isAdmin ? (
+            <NavLink
+              style={({ isActive }) =>
+                isActive ? adminActiveStyle : adminStyle
+              }
+              to="/admin"
+            >
+              Admin
+            </NavLink>
           ) : null}
         </div>
       </div>

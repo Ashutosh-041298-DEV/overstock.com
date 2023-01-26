@@ -1,22 +1,22 @@
-import React, { useState } from 'react';
-import MainList from '../Component/listPage/MainList';
-import SideList from '../Component/listPage/SideList';
+import React, { useState } from "react";
+import MainList from "../Component/listPage/MainList";
+import SideList from "../Component/listPage/SideList";
 import "./ListPage.css";
 const ListPage = () => {
-  const [edit,setEdit] =useState(false);
-  const [display,setDisplay] = useState('');
-  const handleClick = () =>{
+  const [edit, setEdit] = useState(false);
+  const [display, setDisplay] = useState("");
+  const handleClick = () => {
     setEdit(true);
-  }
-  const handleDisplay = (text) =>{
-        setDisplay(text);
-  }
+  };
+  const handleDisplay = (text) => {
+    setDisplay(text);
+  };
   return (
-    <div className='listpage_one'>
-        <SideList handleClick={handleClick} display = {display}/>
-        <MainList edit={edit} handleDisplay={handleDisplay}/>
+    <div className="listpage_one">
+      <SideList handleClick={handleClick} display={display} />
+      <MainList edit={edit} handleDisplay={handleDisplay} />
     </div>
-  )
-}
+  );
+};
 
-export default ListPage
+export default ListPage;

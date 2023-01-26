@@ -4,13 +4,11 @@ import { Navigate, useNavigate } from 'react-router-dom';
 
 function PrivateRoute({children}) {
     const isAuth = useSelector((state) => state.isAuth)
-    const navigate =useNavigate();
-
 
     if(!isAuth){
-           
            return <Navigate to="/login"/>;
     }
+    
   return (
      <>
      {children}

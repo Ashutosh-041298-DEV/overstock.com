@@ -5,18 +5,17 @@ import { Button, Icon, useToast } from "@chakra-ui/react";
 import "./Cart.css";
 import "../Component/Mugs.css";
 
-import {
-  getData,
-  deleteData,
-  Success,
-} from "../Component/Utils/LocalStorage";
+import { getData, deleteData, Success } from "../Component/Utils/LocalStorage";
+
 const Cart = () => {
   const data = getData("Cart");
-  const [cart, setCart] = useState(data);
-  const [discount,setDiscount]=useState(0)
-  const [sum,setSum]=useState(cart.reduce((sum, el) => {
-    return sum + el.price;
-  }, 0))
+  const [cart, setCart] = useState(data || []);
+  const [discount, setDiscount] = useState(0);
+  const [sum, setSum] = useState(
+    cart.reduce((sum, el) => {
+      return sum + el.price;
+    }, 0)
+  );
   const toast = useToast();
 
   const handleDelete = (name) => {
@@ -28,10 +27,11 @@ const Cart = () => {
       isClosable: true,
     });
   };
-  
 
   const handleOrder = () => {
-    setCart(Success("Cart"));
+    setCart([]);
+    Success("Cart");
+    setSum(0);
     toast({
       title: "order Successfull.",
       status: "success",
@@ -53,13 +53,12 @@ const Cart = () => {
                 <div className="MugChild1" align="center" key={item.id}>
                   <div>
                     <img
-                     className="productImage"
-                      
+                      className="productImage"
                       src={item.image}
                       alt={item.name}
                     />{" "}
                   </div>
-                  <div  style={{  fontSize: "20px" }}>
+                  <div style={{ fontSize: "20px" }}>
                     <h1>${item.price}</h1>
                   </div>
                   {item.count == 2 && (
@@ -116,14 +115,17 @@ const Cart = () => {
           </div>
         </div>
         <div className="cart_main">
-          <Input placeholder="Apply Promocode" onChange={(e)=>{
-            setTimeout(()=>{
-              if(e.target.value=="ostack30"){
-                setDiscount(15)
-                setSum(sum*0.85)
-              }
-            },3000)
-          }} />
+          <Input
+            placeholder="Apply Promocode"
+            onChange={(e) => {
+              setTimeout(() => {
+                if (e.target.value == "ostack30") {
+                  setDiscount(15);
+                  setSum(sum * 0.85);
+                }
+              }, 3000);
+            }}
+          />
           <div className="cart_one">
             <div className="cart_two">
               Total Item
@@ -145,6 +147,7 @@ const Cart = () => {
           </div>
           <Button
             onClick={handleOrder}
+            disabled={sum === 0}
             color="white"
             bg="#718096"
             mt="20px"

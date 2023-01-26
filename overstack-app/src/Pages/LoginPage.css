@@ -8,10 +8,12 @@
 
 .signup_one input{
     border: 1px solid gray;
+    padding:10px;
     width: 85%;
     height: 40px;
 }
 .signup_six input{
+    padding: 10px;
     height: auto;
     width: auto;
 }
@@ -49,6 +51,7 @@
 }
 .signin_login input{
     border: 1px solid gray;
+    padding: 10px;
     width: 85%;
     height: 40px;
 }
