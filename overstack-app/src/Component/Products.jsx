@@ -7,7 +7,7 @@ import {
   ChevronLeftIcon,
 } from "@chakra-ui/icons";
 
-import { Button, Spinner, useToast } from "@chakra-ui/react";
+import { Button, Flex, Spinner, useToast } from "@chakra-ui/react";
 import { Link, useLocation } from "react-router-dom";
 import axios from "axios";
 import { useSearchParams } from "react-router-dom";
@@ -67,7 +67,7 @@ const Products = ({ category }) => {
 
   return (
     <div className="Container">
-      <h1 style={{ marginTop: "120px" }}>{category.toUpperCase()}</h1>
+      <h1>{category.toUpperCase()}</h1>
       <div className="SearchBy">
         <label>SortBy:</label>
         <select
@@ -117,7 +117,7 @@ const Products = ({ category }) => {
                 ></Icon>
               </div>
               <div>
-                <img alt="some" src={item.image} />{" "}
+                <img alt="some" src={item.image} width="300px !important" height="300px !important" />{" "}
               </div>
               <span>Featured</span>
               <div style={{ display: "flex" }}>
@@ -132,40 +132,40 @@ const Products = ({ category }) => {
                 </Link>
               </div>
               {item.count === 2 && (
-                <div style={{ display: "flex", marginLeft: "10px" }}>
+                <Flex ml={"10px"}>
                   <img alt="some" src="https://ak1.ostkcdn.com/img/mxc/20200227_rating-star-full.svg" />{" "}
                   <img alt="some" src="https://ak1.ostkcdn.com/img/mxc/20200227_rating-star-full.svg" />
-                </div>
+                </Flex>
               )}
               {item.count === 3 && (
-                <div style={{ display: "flex", marginLeft: "10px" }}>
+                <Flex ml={"10px"}>
                   <img alt="some" src="https://ak1.ostkcdn.com/img/mxc/20200227_rating-star-full.svg" />{" "}
                   <img alt="some" src="https://ak1.ostkcdn.com/img/mxc/20200227_rating-star-full.svg" />
                   <img alt="some" src="https://ak1.ostkcdn.com/img/mxc/20200227_rating-star-full.svg" />
-                </div>
+                </Flex>
               )}
               {item.count === 4 && (
-                <div style={{ display: "flex", marginLeft: "10px" }}>
+                <Flex ml={"10px"}>
                   <img alt="some" src="https://ak1.ostkcdn.com/img/mxc/20200227_rating-star-full.svg" />{" "}
                   <img alt="some" src="https://ak1.ostkcdn.com/img/mxc/20200227_rating-star-full.svg" />
                   <img alt="some" src="https://ak1.ostkcdn.com/img/mxc/20200227_rating-star-full.svg" />
                   <img alt="some" src="https://ak1.ostkcdn.com/img/mxc/20200227_rating-star-full.svg" />
-                </div>
+                </Flex>
               )}
               {item.count === 5 && (
-                <div style={{ display: "flex", marginLeft: "10px" }}>
+                <Flex ml={"10px"}>
                   <img alt="some" src="https://ak1.ostkcdn.com/img/mxc/20200227_rating-star-full.svg" />{" "}
                   <img alt="some" src="https://ak1.ostkcdn.com/img/mxc/20200227_rating-star-full.svg" />
                   <img alt="some" src="https://ak1.ostkcdn.com/img/mxc/20200227_rating-star-full.svg" />
                   <img alt="some" src="https://ak1.ostkcdn.com/img/mxc/20200227_rating-star-full.svg" />
                   <img alt="some" src="https://ak1.ostkcdn.com/img/mxc/20200227_rating-star-full.svg" />
-                </div>
+                </Flex>
               )}
 
               <div>
                 <p>{item.name}</p>
               </div>
-              <div>
+              <div >
                 <h3>
                   {" "}
                   <CheckCircleIcon />
@@ -173,11 +173,12 @@ const Products = ({ category }) => {
                 </h3>
               </div>
               {isAdmin ? (
-                <div>
+                <div >
                   <Button
                     bg={"red"}
                     width="60%"
                     ml="20%"
+                    mb="20px"
                     color="white"
                     onClick={() => handleDelete(item.id)}
                   >

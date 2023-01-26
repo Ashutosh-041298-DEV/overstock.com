@@ -47,7 +47,7 @@ export default function Navbar() {
     if (query) {
       setTimeout(() => {
         axios
-          .get(`https://stock-server.onrender.com/products?q=${query}`)
+          .get(`https://stock-server.onrender.com/products?_limit=6&q=${query}`)
           .then((r) => {
             setData(r.data);
           })
@@ -136,10 +136,6 @@ export default function Navbar() {
               <Link to="/Cart">
                 {" "}
                 <FaShoppingCart />
-              </Link>
-              <Link to="/Cart">
-                {" "}
-                <MdNotificationsActive />
               </Link>
             </div>
           </div>

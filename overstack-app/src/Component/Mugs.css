@@ -1,7 +1,7 @@
 .Container {
   width: 95%;
   margin: auto;
-  margin-top: 110px;
+  margin-top: 120px;
 }
 .Container > h1 {
   color: #2f3337;
@@ -39,6 +39,7 @@
 }
 .Mugs > div > p {
   padding: 10px;
+  height: 65px;
 }
 .Mugs > div > h3 {
   font-weight: 600;
@@ -46,7 +47,7 @@
   padding-left: 10px;
   padding-bottom: 10px;
   text-decoration: line-through;
-  padding-bottom: 70px;
+  padding-bottom: 30px;
 }
 .icon {
   margin-left: 70px;
