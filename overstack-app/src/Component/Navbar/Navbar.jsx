@@ -1,6 +1,6 @@
 import axios from "axios";
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import "./navbar.css";
 import {
   ChevronDownIcon,
@@ -74,7 +74,6 @@ export default function Navbar() {
               {" "}
               <img src="https://i.postimg.cc/RCb3PDNz/User.png" alt="" />
             </Link>
-            {/* <div onclick="window.location.href='signup.html'">Account</div> */}
             <div className="chevronup">
               <img src="https://i.postimg.cc/DZHpvK2K/Chevron-Up.png" alt="" />
             </div>
@@ -98,7 +97,6 @@ export default function Navbar() {
                 <img src="https://i.postimg.cc/B6TrjykP/Heart.png" alt="" />
               </Link>
             </div>
-            {/* <div>Lists</div> */}
             <div className="chevronup">
               <img src="https://i.postimg.cc/DZHpvK2K/Chevron-Up.png" alt="" />
             </div>
@@ -117,7 +115,6 @@ export default function Navbar() {
               className="Cart__Icon-Image"
               style={{ fontSize: " 25px", display: "flex", gap: "18px" }}
             >
-              {/* <img src="https://i.postimg.cc/DyZNh8vX/Cart-Empty.png" alt="" /> */}
               <Link to="/Cart">
                 {" "}
                 <FaShoppingCart />
@@ -127,42 +124,40 @@ export default function Navbar() {
                 <MdNotificationsActive />
               </Link>
             </div>
-
-            {/* <div>Cart</div> */}
           </div>
           <div></div>
         </div>
         <div className="section-div">
           <div>
-            <Link to="mug">Mugs</Link>
+            <NavLink to="/mug">Mugs</NavLink>
           </div>
           <div>
-            <Link to="cookingCutters">Cooking Cutters</Link>
+            <NavLink to="/cookingCutters">Cooking Cutters</NavLink>
           </div>
           <div>
-            <Link to="fryer">Air Fryers</Link>
+            <NavLink to="/fryer">Air Fryers</NavLink>
           </div>
           <div>
-            <Link to="mixers">Mixers</Link>
+            <NavLink to="/mixers">Mixers</NavLink>
           </div>
           <div>
-            <Link to="lamps">Lamps</Link>
+            <NavLink to="/lamps">Lamps</NavLink>
           </div>
           <div>
-            <Link to="towels">Towels</Link>
+            <NavLink to="/towels">Towels</NavLink>
           </div>
           <div>
-            <Link to="blankets">Blankets</Link>
+            <NavLink to="/blankets">Blankets</NavLink>
           </div>
           <div>
-            <Link to="tree">Tree Skirts</Link>
+            <NavLink to="/tree">Tree Skirts</NavLink>
           </div>
           <div>
-            <Link to="garland">Garlands</Link>
+            <NavLink to="/garland">Garlands</NavLink>
           </div>
           {isAdmin ? (
             <div style={{ fontWeight: "900", color: "red" }}>
-              <Link to="/admin">Admin</Link>
+              <NavLink to="/admin">Admin</NavLink>
             </div>
           ) : null}
         </div>
@@ -184,7 +179,8 @@ export default function Navbar() {
             margin: "auto",
           }}
         >
-          {query.length > 0 && data.length>0 &&
+          {query.length > 0 &&
+            data.length > 0 &&
             data.map((item) => (
               <div
                 key={item.id}
