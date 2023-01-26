@@ -68,7 +68,7 @@ const handleHeart=(id)=>{
   return (
     <div className='Container'>
        
-        <h1>{category.toUpperCase()}</h1> 
+        <h1 style={{marginTop:"120px"}}>{category.toUpperCase()}</h1> 
         <div className="SearchBy">
            <label>SortBy:</label>
           <select  onChange={(e)=>setOrder(e.target.value)} style={{width:"16%",border:"1px solid black",marginLeft:"15px"}}>

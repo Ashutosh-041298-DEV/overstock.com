@@ -1,28 +1,21 @@
+import "./App.css";
+import Navbar from "./Component/Navbar/Navbar";
+import MainRoutes from "./Component/MainRoutes";
+import { Footer } from "./Component/home/footer";
+import RespNav from "./Component/Navbar/respnav";
 
-import './App.css';
-import Navbar from "./Component/Navbar/Navbar"
-import MainRoutes from './Component/MainRoutes';
-import { Footer } from './Component/home/footer';
-import RespNav from "./Component/Navbar/respnav"
-import { useEffect, useState } from 'react';
-import axios from 'axios';
-// import privateRoute from './Component/private/privateRoute';
 function App() {
- 
   return (
-
     <div className="App">
-      <div className="main-nav">   
-      <Navbar />
+      <div className="main-nav">
+        <Navbar />
       </div>
       <div className="resp-nav">
-       <RespNav/>
+        <RespNav />
       </div>
       <MainRoutes />
-     
-      <Footer/>
- </div>
-
+      <Footer />
+    </div>
   );
 }
 

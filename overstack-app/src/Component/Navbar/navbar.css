@@ -47,14 +47,18 @@ img {
   border-bottom: 2px solid transparent;
   padding-bottom: 7px;
 }
-.header > div:nth-child(2) div:hover {
-  border-bottom: 2px solid #2f3337;
-}
-.header > div:nth-child(2) div:hover body {
+
+.section-div div:hover body {
   opacity: 0;
 }
-.header > div > div:nth-child(2) {
+.section-div {
   display: flex;
+}
+.section-div a{
+
+}
+.section-div a:hover{
+
 }
 .header .class-account {
   display: flex;

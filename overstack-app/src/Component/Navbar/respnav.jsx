@@ -1,11 +1,32 @@
 import React, { useState } from "react";
 import "./respnav.css";
 import { FaBars, FaShoppingCart } from "react-icons/fa";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { logoutInitiate } from "../../Redux/AuthReducer/action";
 
 export default function RespNav() {
+  const defaultStyle={
+    fontSize: "15px",
+    padding:"5px"
+  }
+  const activeStyle={
+    fontSize: "15px",
+    padding:"5px",
+    fontWeight:"bold",
+    borderBottom: "2px solid red"
+  }
+  const adminStyle={
+    fontSize:"15px",
+    fontWeight:"bold",
+    color:"red",
+  }
+  const adminActiveStyle={
+    fontSize:"15px",
+    fontWeight:"bold",
+    color:"red",
+    borderBottom: "2px solid red"
+  }
   const [show, setShow] = useState(false);
   const {isAdmin,isAuth}=useSelector((state)=>state)
   const dispatch=useDispatch()
@@ -104,40 +125,18 @@ export default function RespNav() {
         className={`${show ? "show-div" : "hide-div"}`}
         onClick={() => setShow(!show)}
       >
-        <div>
-          <Link to="/mug">Mugs</Link>
-        </div>
-        <div>
-          <Link to="/cookingCutters">Cooking Cutters</Link>
-        </div>
-        <div>
-          <Link to="/fryer">Air Fryers</Link>
-        </div>
-        <div>
-          <Link to="/mixers">Mixers</Link>
-        </div>
-        <div>
-          <Link to="/lamps">Lamps</Link>
-        </div>
-        <div>
-          <Link to="/towels">Towels</Link>
-        </div>
-        <div>
-          <Link to="/blankets">Blankets</Link>
-        </div>
-        <div>
-          <Link to="/tree">Tree Skirts</Link>
-        </div>
-        <div>
-          <Link to="/garland">Garlands</Link>
-        </div>
-        {
-          isAdmin?(
-            <div style={{fontWeight:"bolder",color:"red"}}>
-              <Link to="/admin">Admin</Link>
-            </div>
-          ):null
-        }
+       <NavLink style={({isActive})=>isActive?activeStyle:defaultStyle} to="/mugs" >Mugs</NavLink>
+          <NavLink style={({isActive})=>isActive?activeStyle:defaultStyle} to="/cutters">Cutters</NavLink>
+          <NavLink style={({isActive})=>isActive?activeStyle:defaultStyle} to="/fryers">Fryers</NavLink>
+          <NavLink style={({isActive})=>isActive?activeStyle:defaultStyle} to="/mixers">Mixers</NavLink>
+          <NavLink style={({isActive})=>isActive?activeStyle:defaultStyle} to="/lamps">Lamps</NavLink>
+          <NavLink style={({isActive})=>isActive?activeStyle:defaultStyle} to="/towers">Towers</NavLink>
+          <NavLink style={({isActive})=>isActive?activeStyle:defaultStyle} to="/blankets">Blankets</NavLink>
+          <NavLink style={({isActive})=>isActive?activeStyle:defaultStyle} to="/trees">Trees</NavLink>
+          <NavLink style={({isActive})=>isActive?activeStyle:defaultStyle} to="/garlands">Garlands</NavLink>
+          {isAdmin ? (            
+              <NavLink style={({isActive})=>isActive?adminActiveStyle:adminStyle} to="/admin">Admin</NavLink>           
+          ) : null}
       </div>
     </div>
   );

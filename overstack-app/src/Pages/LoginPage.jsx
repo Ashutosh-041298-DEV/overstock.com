@@ -4,7 +4,7 @@ import "./LoginPage.css";
 import { useDispatch, useSelector } from "react-redux";
 import { adminLoginSuccess, loginInitiate, logoutInitiate, registerInitiate} from "../Redux/AuthReducer/action";
 import { createBrowserHistory } from "@remix-run/router";
-import {useNavigate} from "react-router-dom"
+import {Navigate, useNavigate} from "react-router-dom"
 import { useToast } from "@chakra-ui/react";
 const LoginPage = () => {
   const navigate = useNavigate()
@@ -38,9 +38,7 @@ const LoginPage = () => {
       duration: 3000,
       isClosable: true,
     })
-    return navigate("/");
-
-  }
+    return <Navigate to={`/`}/>  }
   const handleSignin = ()=>{
     
     if(lpass && lemail){
@@ -80,8 +78,8 @@ const LoginPage = () => {
     setSemail('')
   }
   return (
-    <>
-      {!isAuth && <div className="signup_signin"> 
+    <div style={{marginTop:"120px" }}>
+      {<div className="signup_signin"> 
         <div className="signup_one">
         <h3>Create Account</h3>
         <div className="signup_two">
@@ -132,7 +130,7 @@ const LoginPage = () => {
         <div style={{ textAlign:"Center",fontSize:"20px"}}>userID:{user}</div>
         <button className="use_signout_btn" onClick={handleSignout}>Signout</button>
         </div> }
-    </>
+    </div>
   );
 };
 

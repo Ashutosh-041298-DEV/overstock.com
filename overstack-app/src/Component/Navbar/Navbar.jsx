@@ -2,12 +2,7 @@ import axios from "axios";
 import React from "react";
 import { Link, NavLink } from "react-router-dom";
 import "./navbar.css";
-import {
-  ChevronDownIcon,
-  CheckCircleIcon,
-  ChevronRightIcon,
-  ChevronLeftIcon,
-} from "@chakra-ui/icons";
+import { ChevronDownIcon, CheckCircleIcon } from "@chakra-ui/icons";
 import { Icon } from "@chakra-ui/react";
 import { FiHeart } from "react-icons/fi";
 import { FaShoppingCart } from "react-icons/fa";
@@ -16,6 +11,29 @@ import { useDispatch, useSelector } from "react-redux";
 import { logoutInitiate } from "../../Redux/AuthReducer/action";
 
 export default function Navbar() {
+  const defaultStyle={
+    fontSize: "15px",
+    padding:"5px"
+  }
+  const activeStyle={
+    fontSize: "15px",
+    padding:"5px",
+    fontWeight:"bold",
+    borderBottom: "2px solid red"
+  }
+  const adminStyle={
+    fontSize:"15px",
+    fontWeight:"bold",
+    padding:"5px",
+    color:"red",
+  }
+  const adminActiveStyle={
+    fontSize:"15px",
+    fontWeight:"bold",
+    color:"red",
+    padding:"5px",
+    borderBottom: "2px solid red"
+  }
   const [query, setQuery] = React.useState("");
   const [data, setData] = React.useState([]);
   const { isAdmin, isAuth } = useSelector((state) => state);
@@ -36,7 +54,7 @@ export default function Navbar() {
           .catch((e) => {
             console.log(e);
           });
-      }, 2000);
+      }, 5000);
     }
   }, [query]);
 
@@ -128,37 +146,17 @@ export default function Navbar() {
           <div></div>
         </div>
         <div className="section-div">
-          <div>
-            <NavLink to="/mug">Mugs</NavLink>
-          </div>
-          <div>
-            <NavLink to="/cookingCutters">Cooking Cutters</NavLink>
-          </div>
-          <div>
-            <NavLink to="/fryer">Air Fryers</NavLink>
-          </div>
-          <div>
-            <NavLink to="/mixers">Mixers</NavLink>
-          </div>
-          <div>
-            <NavLink to="/lamps">Lamps</NavLink>
-          </div>
-          <div>
-            <NavLink to="/towels">Towels</NavLink>
-          </div>
-          <div>
-            <NavLink to="/blankets">Blankets</NavLink>
-          </div>
-          <div>
-            <NavLink to="/tree">Tree Skirts</NavLink>
-          </div>
-          <div>
-            <NavLink to="/garland">Garlands</NavLink>
-          </div>
-          {isAdmin ? (
-            <div style={{ fontWeight: "900", color: "red" }}>
-              <NavLink to="/admin">Admin</NavLink>
-            </div>
+          <NavLink style={({isActive})=>isActive?activeStyle:defaultStyle} to="/mugs" >Mugs</NavLink>
+          <NavLink style={({isActive})=>isActive?activeStyle:defaultStyle} to="/cutters">Cutters</NavLink>
+          <NavLink style={({isActive})=>isActive?activeStyle:defaultStyle} to="/fryers">Fryers</NavLink>
+          <NavLink style={({isActive})=>isActive?activeStyle:defaultStyle} to="/mixers">Mixers</NavLink>
+          <NavLink style={({isActive})=>isActive?activeStyle:defaultStyle} to="/lamps">Lamps</NavLink>
+          <NavLink style={({isActive})=>isActive?activeStyle:defaultStyle} to="/towers">Towers</NavLink>
+          <NavLink style={({isActive})=>isActive?activeStyle:defaultStyle} to="/blankets">Blankets</NavLink>
+          <NavLink style={({isActive})=>isActive?activeStyle:defaultStyle} to="/trees">Trees</NavLink>
+          <NavLink style={({isActive})=>isActive?activeStyle:defaultStyle} to="/garlands">Garlands</NavLink>
+          {isAdmin ? (            
+              <NavLink style={({isActive})=>isActive?adminActiveStyle:adminStyle} to="/admin">Admin</NavLink>           
           ) : null}
         </div>
       </div>

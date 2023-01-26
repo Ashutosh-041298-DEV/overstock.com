@@ -23,7 +23,8 @@
     align-items: center;
 }
 .signup_signin h3{
-    font-size:40px ;
+    font-size:30px ;
+    letter-spacing: 2px;
     margin-bottom: 50px;
 }
 .signup_signin button{
