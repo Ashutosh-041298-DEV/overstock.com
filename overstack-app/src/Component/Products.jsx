@@ -199,7 +199,7 @@ const Products = () => {
           ))}
       </div>
 
-      {data.length > 0 && (
+      
         <div
           style={{ margin: "auto", marginTop: "50px", marginBottom: "50px" }}
         >
@@ -208,13 +208,13 @@ const Products = () => {
           </Button>
           <Button bg={"lightblue"}>{page}</Button>
           <Button
-            disabled={data.length === 0}
+            disabled={data.length === 0||Products.length<8}
             onClick={() => setPage(page + 1)}
           >
             <ChevronRightIcon />
           </Button>
         </div>
-      )}
+      
     </div>
   );
 };
