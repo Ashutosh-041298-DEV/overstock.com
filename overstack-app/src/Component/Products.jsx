@@ -17,6 +17,7 @@ import { useSelector } from "react-redux";
 const Products = () => {
   const toast = useToast();
   const {category}=useParams()
+  console.log(category)
   const [page, setPage] = useState(1);
   const [order, setOrder] = useState("asc");
   const [data, setData] = useState([]);
@@ -76,7 +77,7 @@ const Products = () => {
 
   return (
     <div className="Container">
-      <h1>{toTitleCase(category)}</h1>
+      <h1 align="center">{toTitleCase(category)}</h1>
       <div className="SearchBy">
         <label>SortBy:</label>
         <select
@@ -96,13 +97,17 @@ const Products = () => {
         </select>
       </div>
       {loading && (
-        <Spinner
+        <Flex justifyContent={"center"}>
+          <Spinner
           thickness="4px"
           speed="0.65s"
           emptyColor="gray.200"
           color="blue.500"
           size="xl"
-        />
+          mt="8%"
+          />
+        </Flex>
+        
       )}
       <div className="MugsData">
         {!loading && data.length > 0 &&
@@ -208,7 +213,7 @@ const Products = () => {
           </Button>
           <Button bg={"lightblue"}>{page}</Button>
           <Button
-            disabled={Products.length<12}
+            disabled={data.length<12}
             onClick={() => setPage(page + 1)}
           >
             <ChevronRightIcon />
