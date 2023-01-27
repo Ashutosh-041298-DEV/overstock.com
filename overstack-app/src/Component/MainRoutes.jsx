@@ -10,22 +10,11 @@ import AdminPrivate from "./private/AdminPrivate";
 import Products from "./Products";
 import SingleProduct from "./SingleProduct";
 const MainRoutes = () => {
-  
   return (
     <Routes>
       <Route path="/" element={<Home />} />
-      <Route path="/mugs" element={<Products category={"mugs"} />} />
-      <Route
-        path="/cutters"
-        element={<Products category={"cutters"} />}
-      />
-      <Route path="/mixers" element={<Products category={"mixers"} />} />
-      <Route path="/fryers" element={<Products category={"fryers"} />} />
-      <Route path="/lamps" element={<Products category={"lamps"} />} />
-      <Route path="/towels" element={<Products category={"towels"} />} />
-      <Route path="/blankets" element={<Products category={"blankets"} />} />
-      <Route path="/trees" element={<Products category={"tree"} />}></Route>
-      <Route path="/garlands" element={<Products category={"garland"} />} />
+
+      <Route path="/:category" element={<Products />} />
       <Route path="/login" element={<LoginPage />} />
       <Route path="/list" element={<ListPage />} />
       <Route

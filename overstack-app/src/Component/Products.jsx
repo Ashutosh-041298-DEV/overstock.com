@@ -8,15 +8,15 @@ import {
 } from "@chakra-ui/icons";
 
 import { Button, Flex, Spinner, useToast } from "@chakra-ui/react";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useParams } from "react-router-dom";
 import axios from "axios";
-import { useSearchParams } from "react-router-dom";
 import { Icon } from "@chakra-ui/react";
 import { FiHeart } from "react-icons/fi";
 import { useSelector } from "react-redux";
 
-const Products = ({ category }) => {
+const Products = () => {
   const toast = useToast();
+  const {category}=useParams()
   const [page, setPage] = useState(1);
   const [order, setOrder] = useState("asc");
   const [data, setData] = useState([]);
@@ -39,7 +39,7 @@ const Products = ({ category }) => {
       .catch((err) => {
         console.log(err)
       });
-  }, [page, order, category]);
+  }, [page, order,category]);
 
   const handleDelete = (id) => {
     axios
@@ -60,6 +60,15 @@ const Products = ({ category }) => {
       .catch((err) => console.log(err));
   };
 
+  function toTitleCase(str) {
+    return str.replace(
+      /\w\S*/g,
+      function(txt) {
+        return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();
+      }
+    );
+  }
+
   const handleHeart = (id) => {
     setColor(!color);
     console.log(id);
@@ -67,7 +76,7 @@ const Products = ({ category }) => {
 
   return (
     <div className="Container">
-      <h1>{category.toUpperCase()}</h1>
+      <h1>{toTitleCase(category)}</h1>
       <div className="SearchBy">
         <label>SortBy:</label>
         <select
