@@ -26,7 +26,7 @@ export const ImageSlider = ({ imagess }) => {
   };
 
   return (
-    <>
+    <div>
       <div className="tag">
         <div className="limitedtimeHeadingDiv">
           <h2 className="limitedtimeHeading">Savings to Bring in the Season</h2>
@@ -54,6 +54,6 @@ export const ImageSlider = ({ imagess }) => {
           ))}
         </Carousel>
       </div>
-    </>
+    </div>
   );
 };

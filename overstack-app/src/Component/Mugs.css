@@ -33,9 +33,11 @@
   padding: 10px;
 }
 .Mugs > div > h1 {
-  padding: 10px;
   color: black;
   font-weight: 600;
+  padding-left: 13px;
+  padding-bottom: 10px;
+  font-size: 16px;
 }
 .Mugs > div > p {
   padding: 10px;
