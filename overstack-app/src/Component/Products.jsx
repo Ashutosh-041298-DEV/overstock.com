@@ -105,7 +105,7 @@ const Products = () => {
         />
       )}
       <div className="MugsData">
-        {data.length > 0 &&
+        {!loading && data.length > 0 &&
           data.map((item) => (
             <div className="Mugs" key={item.id}>
               <div>
@@ -208,7 +208,7 @@ const Products = () => {
           </Button>
           <Button bg={"lightblue"}>{page}</Button>
           <Button
-            disabled={Products.length<8}
+            disabled={Products.length<12}
             onClick={() => setPage(page + 1)}
           >
             <ChevronRightIcon />
