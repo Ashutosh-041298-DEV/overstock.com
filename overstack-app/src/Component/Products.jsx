@@ -208,7 +208,7 @@ const Products = () => {
           </Button>
           <Button bg={"lightblue"}>{page}</Button>
           <Button
-            disabled={data.length === 0||Products.length<8}
+            disabled={Products.length<8}
             onClick={() => setPage(page + 1)}
           >
             <ChevronRightIcon />
