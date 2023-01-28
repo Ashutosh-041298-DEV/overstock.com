@@ -1,36 +1,29 @@
-import "./Home.css";
+import { SimpleGrid } from "@chakra-ui/react";
+import { Card, CardBody, Image, Text, Box, Heading ,Divider } from "@chakra-ui/react";
 
 export const StaticProd = ({ prod }) => {
   return (
     <>
-      <div class="row">
-        <div class="col limitedtimeDiv">
-          <div class="limitedtimeHeadingDiv">
-            <h2 class="limitedtimeHeading">Fresh Finds In Each Category</h2>
-          </div>
-        </div>
-      </div>
-
-      <div class="row universalSpacing">
-        <div class="col">
-          <div class="categoryContainer">
-            {prod.map((item) => {
-              return (
-                <>
-                  <div class="categoryCard">
-                    <div class="categoryCardImgDiv">
-                      <img class="categoryCardImg" src={item.src} alt="" />
-                    </div>
-                    <div class="categoryCardTitleDiv">
-                      <h3 class="title-xs categoryCardTitle">{item.Title}</h3>
-                    </div>
-                  </div>
-                </>
-              );
-            })}
-          </div>
-        </div>
-      </div>
+      <Box width="90%" ml="5%" mt="50px">
+        <Heading align="center" mb="50px" fontSize="27px">
+          Fresh Finds in Each Category
+        </Heading>
+        <SimpleGrid columns={[1, 2, 3, 4]} gap="30px">
+          {prod.map((e) => {
+            return (
+              <Card>
+                <CardBody align="center">
+                  <Image src={e.src} mb="10px" width="300px" />
+                  <Divider/>
+                   <Text fontSize={"12px"} fontWeight={"bold"}>
+                    {e.Title}
+                   </Text>
+                </CardBody>
+              </Card>
+            );
+          })}
+        </SimpleGrid>
+      </Box>
     </>
   );
 };

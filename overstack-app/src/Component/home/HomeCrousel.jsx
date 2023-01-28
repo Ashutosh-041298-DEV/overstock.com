@@ -1,5 +1,6 @@
 import "./Home.css";
 import Carousel from "react-multi-carousel";
+import{Heading} from "@chakra-ui/react"
 import "react-multi-carousel/lib/styles.css";
 
 export const ImageSlider = ({ imagess }) => {
@@ -27,11 +28,8 @@ export const ImageSlider = ({ imagess }) => {
 
   return (
     <div>
-      <div className="tag">
-        <div className="limitedtimeHeadingDiv">
-          <h2 className="limitedtimeHeading">Savings to Bring in the Season</h2>
-        </div>
-      </div>
+      
+      <Heading align="center" fontSixe="27px" mb="50px" mt="50px">Savings to Bring Every Season</Heading>
       <div align="center" className="imgslider">
         <Carousel
           responsive={responsive}

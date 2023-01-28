@@ -1,119 +1,7 @@
 
 
-button {
-  font-size: calc(10px + 2vmin);
-}
-.banner {
-  position: relative;
-  width: 100%;
-  text-align: center;
-  overflow: hidden;
-  margin-top: 90px;
-}
-
-/* ------------Limited Offers CSS */
-.limitedtimeHeadingDiv {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  margin-top: 3rem;
-}
-
-.limitedtimeHeading {
-  font-weight: 700;
-  font-size: 3.2rem;
-  color: #2f3337;
-  line-height: 1.2;
-  margin: 0 0 3.2rem;
-}
-
-.limitedtimeDiv {
-  width: 100%;
-}
-
-.universalSpacing {
-  padding: 3.2rem 0;
-}
-
-.universalSpacingX {
-  padding: 2.4rem;
-}
-
-.offerContainer,
-.categoryContainer {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-  width: 89%;
-  margin: auto;
-  grid-row-gap: 4rem;
-  grid-column-gap: 3rem;
-}
-.offerContainer {
-  grid-template-columns: repeat(6, 1fr);
-  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-  width: 60%;
-  margin: auto;
-  /* align-items: left; */
-  grid-row-gap: 4rem;
-  grid-column-gap: 3rem;
-}
-.offerCard {
-  width: 14.5rem;
-}
-.offerCard a {
-  text-decoration: none;
-}
-
-.categoryCard {
-  width: 100%;
-}
-
-.offerCardLink,
-.categoryCardLink {
-  display: inline-block;
-  height: 100%;
-  text-align: center;
-  width: 100%;
-}
-
-.offerCardImgDiv,
-.categoryCardImgDiv {
-  height: 0;
-  min-width: 100%;
-  padding-bottom: 100%;
-  position: relative;
-}
-
-.offerCardTitleDiv,
-.categoryCardTitleDiv {
-  padding: 0.8rem 1.6rem 0;
-}
-
-.offerCardImg,
-.categoryCardImg {
-  width: 100%;
-}
-
-.offerCardTitle,
-.categoryCardTitle {
-  font-weight: 700;
-  margin: 0;
-  color: #2f336f;
-}
-
-.categoryCardTitle {
-  color: #545658;
-}
-
-.ImageTilesSectionStyles_tiles__AcMsv {
-  width: 100%;
-  display: flex;
-  flex-wrap: wrap;
-  margin: 0 -0.4rem -1.6rem;
-  color: #2f3337;
-}
-
 /* slider  */
+
 .sliderCardDiv {
   padding: 20px 0;
 }
@@ -127,10 +15,6 @@ button {
   width: 90%;
 }
 
-.limitedtimeHeading {
-  font-size: 27px;
-  margin-top: 1rem;
-}
 .slides {
   background-color: rgb(254, 251, 251);
   width: 93%;
