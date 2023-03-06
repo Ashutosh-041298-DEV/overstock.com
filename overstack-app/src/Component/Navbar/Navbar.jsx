@@ -256,7 +256,10 @@ export default function Navbar() {
                   <Link to={`/products/${item.id}`}>
                     {" "}
                     <span
-                      onClick={() => setData([])}
+                      onClick={() => {
+                        setData([])
+                        setQuery("")
+                      }}
                       style={{ marginLeft: "20px" }}
                     >
                       <ChevronDownIcon />
