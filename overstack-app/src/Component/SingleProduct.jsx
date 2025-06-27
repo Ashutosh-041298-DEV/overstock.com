@@ -15,7 +15,7 @@ const  SingleProduct = () => {
     console.log(id)
     const[item,setData]=React.useState({});
     useEffect(()=>{
-      axios.get(`https://stock-server.onrender.com/products/${id}`)
+      axios.get(`https://stcok-server.vercel.app/products/${id}`)
       .then((res)=>{setData(res.data)})
       .catch((error)=>console.log(error))
     },[id])
