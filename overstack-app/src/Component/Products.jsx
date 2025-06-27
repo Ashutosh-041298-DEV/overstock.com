@@ -42,7 +42,7 @@ const Products = () => {
 
     axios
       .get(
-        `https://stock-server.onrender.com/products?category=${category}&_limit=12&_page=${page}&_sort=price&_order=${order}`
+        `https://stcok-server.vercel.app/products?category=${category}&_limit=12&_page=${page}&_sort=price&_order=${order}`
       )
       .then((r) => {
         setState((prevState) => ({
@@ -57,7 +57,7 @@ const Products = () => {
 
   const handleDelete = (id) => {
     axios
-      .delete(`https://stock-server.onrender.com/products/${id}`)
+      .delete(`https://stcok-server.vercel.app/products/${id}`)
       .then(() => {
         setState((prevState) => ({
           ...prevState,
