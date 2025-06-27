@@ -13,6 +13,8 @@ Live Link - https://overstock-com-pi.vercel.app/
 
 github - https://github.com/Ashutosh-041298-DEV/overstock.com
 
+backend server = https://stcok-server.vercel.app/products
+
 
 
 ### Functionalities are:
