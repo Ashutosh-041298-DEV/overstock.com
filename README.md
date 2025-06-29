@@ -9,7 +9,7 @@ whole website that we have created are responsive as well.
 
 
 ## 🔗 Links
-Live Link - https://overstock-com-pi.vercel.app/
+Live Link - https://overstock-com-wjtl.vercel.app/
 
 github - https://github.com/Ashutosh-041298-DEV/overstock.com
 
